@@ -1,0 +1,21 @@
+<nav class="nav">
+  <div class="brand">
+    <div class="logo">SM</div>
+    <div class="name">Server Monitor</div>
+  </div>
+
+  <ul class="links">
+    <li>
+      <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <span class="icon">🏠</span>
+        <span class="text">Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/services" routerLinkActive="active">
+        <span class="icon">🧩</span>
+        <span class="text">Services</span>
+      </a>
+    </li>
+  </ul>
+</nav>

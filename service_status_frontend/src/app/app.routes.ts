@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { authGuard } from './auth/auth.guard';
 import { Component } from '@angular/core';
+import { ShellComponent } from './layout/shell/shell.component';
 
 /**
  * Lightweight stub components for protected routes to ensure routing works.
@@ -25,14 +26,13 @@ export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
   { path: 'login', component: LoginComponent },
   {
-    path: 'dashboard',
+    path: '',
+    component: ShellComponent,
     canActivate: [authGuard],
-    loadComponent: () => Promise.resolve(DashboardStubComponent),
-  },
-  {
-    path: 'services',
-    canActivate: [authGuard],
-    loadComponent: () => Promise.resolve(ServicesStubComponent),
+    children: [
+      { path: 'dashboard', loadComponent: () => Promise.resolve(DashboardStubComponent) },
+      { path: 'services', loadComponent: () => Promise.resolve(ServicesStubComponent) },
+    ]
   },
   { path: '**', redirectTo: 'dashboard' },
 ];

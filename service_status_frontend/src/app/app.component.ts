@@ -2,10 +2,12 @@ import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ApiService } from './core/services/api.service';
 import { RealtimeService } from './core/services/realtime.service';
 import { Subscription } from 'rxjs';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
