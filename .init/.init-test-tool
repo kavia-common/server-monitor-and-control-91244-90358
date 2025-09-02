@@ -1,0 +1,4 @@
+{
+    "command": "npm run test",
+    "working_directory": "/home/kavia/workspace/code-generation/server-monitor-and-control-91244-90358/service_status_frontend"
+}
